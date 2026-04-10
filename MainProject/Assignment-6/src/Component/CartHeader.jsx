@@ -5,13 +5,15 @@ import SelectedCartItems from "./SelectedCartItems";
 const CartHeader = ({ products }) => {
   const [activebtn, setActiceBtn] = useState(true);
  const [selectedPlayer, setselectedPlayer]=useState([]);
+
   const handleClick = (value) => {
     setActiceBtn(value);
   };
+const removePlayer = (id) => {
+ 
+  setselectedPlayer((prev) => prev.filter((player) => player.id !== id));
+};
 
-  // const handleSelectedPlayers=()=>{
-     
-  // }
   return (
     <div className="flex flex-col items-center justify-center text-center gap-2.5">
       <h2 className="font-bold text-4xl mt-[50px] mb-[20px]">
@@ -32,7 +34,7 @@ const CartHeader = ({ products }) => {
           className={`btn ${activebtn ? "btn-Secondary" : "btn-primary"}`}
           onClick={() => handleClick(false)}
         >
-          Cart {(selectedPlayer.length)}
+          Cart {selectedPlayer.length}
         </button>
       </div>
 
@@ -41,9 +43,13 @@ const CartHeader = ({ products }) => {
           products={products}
           setselectedPlayer={setselectedPlayer}
           selectedPlayer={selectedPlayer}
+         
         />
       ) : (
-        <SelectedCartItems selectedPlayer={selectedPlayer} />
+        <SelectedCartItems
+          selectedPlayer={selectedPlayer}
+          removePlayer={removePlayer}
+        />
       )}
     </div>
   );

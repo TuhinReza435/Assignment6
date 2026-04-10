@@ -1,7 +1,12 @@
 import React from "react";
 import Selectitem from "./Selectitem";
 
-const ShowCardDetails = ({ products, setselectedPlayer, selectedPlayer }) => {
+const ShowCardDetails = ({
+  products,
+  setselectedPlayer,
+  selectedPlayer,
+
+}) => {
   return (
     <div className="grid grid-cols-3 gap-5">
       {products.map((product) => (
@@ -10,6 +15,7 @@ const ShowCardDetails = ({ products, setselectedPlayer, selectedPlayer }) => {
           product={product}
           setselectedPlayer={setselectedPlayer}
           selectedPlayer={selectedPlayer}
+         
         />
       ))}
     </div>

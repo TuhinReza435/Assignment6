@@ -1,13 +1,18 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
 
-const Selectitem = ({ product, setselectedPlayer,selectedPlayer }) => {
-     console.log(selectedPlayer)
+const Selectitem = ({
+  product,
+  setselectedPlayer,
+  selectedPlayer,
+
+}) => {
+  console.log(selectedPlayer);
   const handleCard = () => {
-      setselectedPlayer([...selectedPlayer,product]);
-      console.log(selectedPlayer)
+    setselectedPlayer([...selectedPlayer, product]);
+    
   };
-  
+
   return (
     <div className="flex flex-col shadow-lg rounded-2xl gap-4 items-start p-6 bg-white border border-gray-100 hover:shadow-xl transition-shadow">
       <div className="bg-gray-50 p-3 rounded-2xl border border-gray-100">
@@ -49,7 +54,6 @@ const Selectitem = ({ product, setselectedPlayer,selectedPlayer }) => {
         ))}
       </ul>
 
-    
       <button
         className="btn btn-primary w-full  py-3 font-bold mt-auto mb-[10px] hover:scale-[1.02] transition-transform rounded-full"
         onClick={handleCard}
