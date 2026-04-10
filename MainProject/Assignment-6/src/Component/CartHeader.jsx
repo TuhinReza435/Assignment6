@@ -32,7 +32,7 @@ const CartHeader = ({ products }) => {
           className={`btn ${activebtn ? "btn-Secondary" : "btn-primary"}`}
           onClick={() => handleClick(false)}
         >
-          Cart ( )
+          Cart {(selectedPlayer.length)}
         </button>
       </div>
 
