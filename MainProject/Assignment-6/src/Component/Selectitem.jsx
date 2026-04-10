@@ -1,10 +1,15 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
 
-const Selectitem = ({ product }) => {
+const Selectitem = ({ product, setselectedPlayer,selectedPlayer }) => {
+     console.log(selectedPlayer)
+  const handleCard = () => {
+      setselectedPlayer([...selectedPlayer,product]);
+      console.log(selectedPlayer)
+  };
+  
   return (
     <div className="flex flex-col shadow-lg rounded-2xl gap-4 items-start p-6 bg-white border border-gray-100 hover:shadow-xl transition-shadow">
- 
       <div className="bg-gray-50 p-3 rounded-2xl border border-gray-100">
         <img
           src={product.icon}
@@ -13,7 +18,6 @@ const Selectitem = ({ product }) => {
         />
       </div>
 
-      
       <div className="space-y-2 text-start">
         <h2 className="text-xl font-extrabold text-gray-800">{product.name}</h2>
         <p className="text-sm text-[#627382] leading-relaxed">
@@ -31,7 +35,6 @@ const Selectitem = ({ product }) => {
         </span>
       </div>
 
-   
       <ul className="space-y-2.5 w-full">
         {product.features.map((element, index) => (
           <li
@@ -46,8 +49,11 @@ const Selectitem = ({ product }) => {
         ))}
       </ul>
 
-      {/* Button with 10px bottom spacing as requested */}
-      <button className="btn btn-primary w-full rounded-xl py-3 font-bold mt-auto mb-[10px] hover:scale-[1.02] transition-transform">
+    
+      <button
+        className="btn btn-primary w-full  py-3 font-bold mt-auto mb-[10px] hover:scale-[1.02] transition-transform rounded-full"
+        onClick={handleCard}
+      >
         Buy Now
       </button>
     </div>

@@ -4,10 +4,14 @@ import SelectedCartItems from "./SelectedCartItems";
 
 const CartHeader = ({ products }) => {
   const [activebtn, setActiceBtn] = useState(true);
-  const handleClick = () => {
-    setActiceBtn(!activebtn);
-    console.log(activebtn);
+ const [selectedPlayer, setselectedPlayer]=useState([]);
+  const handleClick = (value) => {
+    setActiceBtn(value);
   };
+
+  // const handleSelectedPlayers=()=>{
+     
+  // }
   return (
     <div className="flex flex-col items-center justify-center text-center gap-2.5">
       <h2 className="font-bold text-4xl mt-[50px] mb-[20px]">
@@ -20,21 +24,26 @@ const CartHeader = ({ products }) => {
       <div className="flex gap-5">
         <button
           className={`btn ${activebtn ? "btn-primary" : "btn-Secondary"} `}
-          onClick={() => !activebtn && handleClick()}
+          onClick={() => handleClick(true)}
         >
           Products
         </button>
         <button
           className={`btn ${activebtn ? "btn-Secondary" : "btn-primary"}`}
-          onClick={() => activebtn && handleClick()}
+          onClick={() => handleClick(false)}
         >
           Cart ( )
         </button>
       </div>
+
       {activebtn ? (
-        <ShowCardDetails products={products} />
+        <ShowCardDetails
+          products={products}
+          setselectedPlayer={setselectedPlayer}
+          selectedPlayer={selectedPlayer}
+        />
       ) : (
-        <SelectedCartItems products={products} />
+        <SelectedCartItems selectedPlayer={selectedPlayer} />
       )}
     </div>
   );
