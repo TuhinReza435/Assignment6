@@ -14,7 +14,7 @@ const Selectitem = ({
   };
 
   return (
-    <div className="flex flex-col shadow-lg rounded-2xl gap-4 items-start p-6 bg-white border border-gray-100 hover:shadow-xl transition-shadow">
+    <div className="flex flex-col shadow-lg rounded-2xl gap-4 items-start p-6 bg-white border border-gray-100 hover:shadow-xl transition-shadow relative">
       <div className="bg-gray-50 p-3 rounded-2xl border border-gray-100">
         <img
           src={product.icon}
@@ -30,7 +30,6 @@ const Selectitem = ({
         </p>
       </div>
 
-      {/* Pricing */}
       <div className="flex items-baseline gap-1">
         <span className="font-black text-3xl text-gray-900">
           ${product.price}
@@ -60,6 +59,9 @@ const Selectitem = ({
       >
         Buy Now
       </button>
+      <div className="absolute top-3 right-2.5 border px-2 bg-gradient-to-r from-[#4f39f6] to-[#9514fa] rounded-full py-1">
+        {product.tagType}{" "}
+      </div>
     </div>
   );
 };

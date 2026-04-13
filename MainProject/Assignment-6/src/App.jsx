@@ -2,7 +2,9 @@ import "./App.css";
 import Body from "./Component/Body";
 import CartHeader from "./Component/CartHeader";
 import Navbar from "./Component/Navbar";
+import Pricing from "./Component/Pricing";
 import ShowNumber from "./Component/ShowNumber";
+import StartThreeStep from "./Component/StartThreeStep";
 const products = [
   {
     id: 1,
@@ -169,6 +171,8 @@ function App() {
       <ShowNumber />
       <div className="w-[85%] mx-auto">
         <CartHeader products={products} />
+         <StartThreeStep/>
+         <Pricing/>
       </div>
     </div>
   );

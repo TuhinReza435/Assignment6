@@ -1,9 +1,9 @@
 import React from "react";
 
-const PlayerIndividual = ({ player,  removePlayer }) => {
+const PlayerIndividual = ({ player, removePlayer }) => {
   const handleclick = () => {
-    console.log(player.id)
-    removePlayer(player.id)
+    console.log(player.id);
+    removePlayer(player.id);
   };
 
   return (

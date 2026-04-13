@@ -1,13 +1,11 @@
 import React from "react";
 import { GoDotFill } from "react-icons/go";
 import { CiPlay1 } from "react-icons/ci";
-import bannerImg from "../picture/banner.png";
+import bannerImg from "../picture/products/banner.png";
 const Body = () => {
   return (
     <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh] py-16">
-    
       <div className="flex flex-col items-start space-y-6 lg:mt-0 mt-[60px]">
-       
         <div className="flex items-center gap-2 bg-gradient-to-r from-[#4f39f6]/10 to-[#9514fa]/10 border border-[#4f39f6]/20 px-4 py-1.5 rounded-full">
           <span className="flex h-2 w-2 rounded-full bg-[#4f39f6] animate-pulse"></span>
           <span className="text-sm font-medium bg-gradient-to-r from-[#4f39f6] to-[#9514fa] bg-clip-text text-transparent">
@@ -44,15 +42,12 @@ const Body = () => {
         </div>
       </div>
 
-     
       <div className="relative w-full h-full flex items-center justify-center p-4">
-      
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
         <div className="absolute top-1/4 right-1/4 -z-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
 
-       
         <img
-          src={bannerImg} 
+          src={bannerImg}
           alt="AI Digital Workflow Illustration"
           className="w-full h-auto max-w-[550px] object-cover rounded-2xl shadow-xl border border-gray-100 p-3 bg-white"
         />
