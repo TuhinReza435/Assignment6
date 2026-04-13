@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import ShowCardDetails from "./ShowCardDetails";
 import SelectedCartItems from "./SelectedCartItems";
 
-const CartHeader = ({ products }) => {
-  const [activebtn, setActiceBtn] = useState(true);
- const [selectedPlayer, setselectedPlayer]=useState([]);
+const CartHeader = ({ products, activebtn, setActiceBtn }) => {
+ 
+  const [selectedPlayer, setselectedPlayer] = useState([]);
 
   const handleClick = (value) => {
     setActiceBtn(value);
   };
-const removePlayer = (id) => {
- 
-  setselectedPlayer((prev) => prev.filter((player) => player.id !== id));
-};
+  const removePlayer = (id) => {
+    setselectedPlayer((prev) => prev.filter((player) => player.id !== id));
+  };
 
   return (
     <div className="flex flex-col items-center justify-center text-center gap-2.5">
@@ -43,7 +42,6 @@ const removePlayer = (id) => {
           products={products}
           setselectedPlayer={setselectedPlayer}
           selectedPlayer={selectedPlayer}
-         
         />
       ) : (
         <SelectedCartItems

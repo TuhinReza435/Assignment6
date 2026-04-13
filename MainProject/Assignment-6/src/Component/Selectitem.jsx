@@ -1,17 +1,18 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
 
-const Selectitem = ({
-  product,
-  setselectedPlayer,
-  selectedPlayer,
-
-}) => {
+const Selectitem = ({ product, setselectedPlayer, selectedPlayer }) => {
   console.log(selectedPlayer);
-  const handleCard = () => {
+const handleCard = () => {
+
+  const isExist = selectedPlayer.find((p) => p.id === product.id);
+
+  if (!isExist) {
     setselectedPlayer([...selectedPlayer, product]);
-    
-  };
+  } else {
+    alert("This product is already in your cart!");
+  }
+};
 
   return (
     <div className="flex flex-col shadow-lg rounded-2xl gap-4 items-start p-6 bg-white border border-gray-100 hover:shadow-xl transition-shadow relative">

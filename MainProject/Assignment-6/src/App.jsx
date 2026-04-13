@@ -7,6 +7,8 @@ import Pricing from "./Component/Pricing";
 import ShowNumber from "./Component/ShowNumber";
 import StartThreeStep from "./Component/StartThreeStep";
 import Footer from "./Footer";
+import { useState } from "react";
+
 const products = [
   {
     id: 1,
@@ -162,22 +164,43 @@ const products = [
     icon: "https://cdn-icons-png.flaticon.com/512/1055/1055644.png",
   },
 ];
+
 function App() {
+  const [activebtn, setActiceBtn] = useState(true);
+
   return (
     <div>
+      {/* 1. First Conditional Block */}
+      {activebtn && (
+        <>
+          <div className="w-[85%] mx-auto">
+            <Navbar />
+            <Body />
+          </div>
+          <ShowNumber />
+        </>
+      )}
+
+      {/* 2. This section always shows (CartHeader) */}
       <div className="w-[85%] mx-auto">
-        <div></div>
-        <Navbar />
-        <Body />
+        <CartHeader
+          products={products}
+          activebtn={activebtn}
+          setActiceBtn={setActiceBtn}
+        />
       </div>
-      <ShowNumber />
-      <div className="w-[85%] mx-auto">
-        <CartHeader products={products} />
-         <StartThreeStep/>
-         <Pricing/>
-      </div>
-      <Last2/>
-      <Footer/>
+
+      {/* 3. Second Conditional Block */}
+      {activebtn && (
+        <>
+          <div className="w-[85%] mx-auto">
+            <StartThreeStep />
+            <Pricing />
+          </div>
+          <Last2 />
+          <Footer />
+        </>
+      )}
     </div>
   );
 }
