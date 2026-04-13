@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
-
+import { ToastContainer, toast } from "react-toastify";
 const Selectitem = ({ product, setselectedPlayer, selectedPlayer }) => {
   console.log(selectedPlayer);
 const handleCard = () => {
@@ -9,8 +9,14 @@ const handleCard = () => {
 
   if (!isExist) {
     setselectedPlayer([...selectedPlayer, product]);
+    toast.success('Successfully added',{
+      autoClose :3000
+    })
   } else {
-    alert("This product is already in your cart!");
+    toast.warn("Already added this card",{
+      autoClose:3000
+    });
+    
   }
 };
 
@@ -59,9 +65,10 @@ const handleCard = () => {
         onClick={handleCard}
       >
         Buy Now
+        <ToastContainer/>
       </button>
       <div className="absolute top-3 right-2.5 border px-2 bg-gradient-to-r from-[#4f39f6] to-[#9514fa] rounded-full py-1">
-        {product.tagType}{" "}
+        {product.tagType}
       </div>
     </div>
   );
