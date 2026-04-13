@@ -1,10 +1,12 @@
 import "./App.css";
 import Body from "./Component/Body";
 import CartHeader from "./Component/CartHeader";
+import Last2 from "./Component/Last2";
 import Navbar from "./Component/Navbar";
 import Pricing from "./Component/Pricing";
 import ShowNumber from "./Component/ShowNumber";
 import StartThreeStep from "./Component/StartThreeStep";
+import Footer from "./Footer";
 const products = [
   {
     id: 1,
@@ -174,6 +176,8 @@ function App() {
          <StartThreeStep/>
          <Pricing/>
       </div>
+      <Last2/>
+      <Footer/>
     </div>
   );
 }
