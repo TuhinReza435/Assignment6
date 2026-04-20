@@ -1,5 +1,4 @@
-
-import PlayerIndividual from "./playerIndividual";
+import PlayerIndividual from "./PlayerIndividual";
 import CheckOut from "./CheckOut";
 const SelectedCartItems = ({ selectedPlayer, removePlayer }) => {
   const total = selectedPlayer.reduce((sum, player) => sum + player.price, 0);
